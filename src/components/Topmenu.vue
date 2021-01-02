@@ -1,0 +1,49 @@
+<template>
+  <v-app-bar app color="#F5F5F">
+    <div class="d-flex align-center">
+      <v-btn text plain rounded large to="/">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          transition="scale-transition"
+          width="40"
+        />
+        {{ $store.state.translation[$store.state.language]["general-website"].title }}
+      </v-btn>
+    </div>
+
+    <v-spacer></v-spacer>
+    <v-btn
+    text
+    to="/results"
+    >
+      {{$store.state.translation[$store.state.language]["general-website"]['retrievereport']}}
+    </v-btn>
+    <LanguageMenu />
+    <NavigationMenu />
+    <!-- <v-container>
+      <v-switch
+        inset
+        v-model="themeType"
+        :label="themeType? 'Light Mode': 'Dark Mode' "
+      ></v-switch>
+    </v-container> -->
+  </v-app-bar>
+</template>
+
+<script>
+import LanguageMenu from "@/components/LanguageMenu";
+import NavigationMenu from "@/components/NavigationMenu"
+export default {
+  data: () => ({
+    themeType: true,
+  }),
+  components: {
+    LanguageMenu,
+    NavigationMenu
+  },
+};
+</script>
+
