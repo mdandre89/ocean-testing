@@ -2,7 +2,7 @@ Module for returning Big Five [Johnson 120 IPIP-NEO-PI-R]
 
 # ocean-testing
 
-CURRENTLY DEPLOYED AT: https://big5testing.com
+CURRENTLY DEPLOYED AT: http://bigfivepersonalitytraits.com
 
 Tests and evaluation is gathered from [ipip.ori.org](http://ipip.ori.org).
 
