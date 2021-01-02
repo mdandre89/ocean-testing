@@ -2,7 +2,7 @@ Module for returning Big Five [Johnson 120 IPIP-NEO-PI-R]
 
 # ocean-testing
 
-Prod: https://ocean-testing.vercel.app and https://ocean-testing.netlify.app
+Prod: https://big5testing.vercel.app and https://big5testing.netlify.app
 
 Tests and evaluation is gathered from [ipip.ori.org](http://ipip.ori.org).
 
