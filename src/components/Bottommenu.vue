@@ -10,7 +10,7 @@
         <v-divider></v-divider>
 
         <v-card-text>
-          {{ new Date().getFullYear() }} — <strong>Free Psychometrics</strong>
+          {{ new Date().getFullYear() }} — <strong>Big 5 Testing</strong>
         </v-card-text>
       </v-card>
     </v-footer>
