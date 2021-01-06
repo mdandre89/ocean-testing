@@ -21,12 +21,18 @@ export default {
       type: Array,
     },
   },
+  componentDidmount () {
+    window.addEventListener('resize', this.getWidth)
+  },
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.getWidth)
+  },
   data() {
     return {
       chartOptions: {
         height: 600,
-        width: 1000,
-        chartArea: { width: "90%", height: "90%", left: "20%" },
+        width: this.getWidth,
+        chartArea: { width: "100%", height: "90%" },
         legend: "none",
         vAxis: { minValue: 0, maxValue: 100, gridlines: { count: 4 } },
         hAxis: { textStyle: { fontSize: 12, fontName: "sans-serif" } },
@@ -47,9 +53,18 @@ export default {
       },
     };
   },
+  computed:{
+    getWidth () {
+      const chartWidth = window.innerWidth * 0.70
+      console.log(chartWidth)
+      return chartWidth
+    }
+  }
 };
 </script>
 
 <style>
-
+div[dir~="ltr"]{
+  margin: 0 auto;
+}
 </style>

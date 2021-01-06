@@ -1,5 +1,5 @@
 <template>
-  <div class="middlealign">
+  <div class="middlealign enable-select">
     <h3> {{$store.state.translation[$store.state.language]["general-website"]['enteridtext']}} </h3>
     <form>
       <v-text-field

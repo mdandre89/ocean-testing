@@ -43,6 +43,9 @@ export default {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
+.enable-select{
+  user-select: text;
+}
 .middlealign {
   width: 65%;
   margin: 0 auto;
