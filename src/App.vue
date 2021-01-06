@@ -32,7 +32,6 @@ export default {
 <style>
 
 #app{
-  @import url('https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,600;1,400;1,600&display=swap');
   background: #fafafa;
   font-family: 'Krub', sans-serif!important;
   -webkit-user-select: none;

@@ -23,13 +23,6 @@
     </v-btn>
     <LanguageMenu />
     <NavigationMenu />
-    <!-- <v-container>
-      <v-switch
-        inset
-        v-model="themeType"
-        :label="themeType? 'Light Mode': 'Dark Mode' "
-      ></v-switch>
-    </v-container> -->
   </v-app-bar>
 </template>
 
