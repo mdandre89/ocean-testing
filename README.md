@@ -50,3 +50,4 @@ npm run lint
 ## About
 
 TODO
+Setup Testing, Vue I18n is internationalization plugin for Vue.js

@@ -47,7 +47,6 @@ export default {
   created(){
     this.progress =  (this.answered.size / this.testData.length) * 100
     this.movenext = this.answered.size/this.numberOfQuestions < this.currentPage + 1 && this.answered.size === 0
-    this.currentPage = this.answered.size/this.numberOfQuestions
   },
   computed:{
     ...mapState(['sex', 'age', 'answered', 'testdata', 'language', 'testdata300', 'testType']),

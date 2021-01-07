@@ -57,14 +57,13 @@ export default new Vuex.Store({
       state.testType = value;
     },
     RESET_STATE(state) {
-      this.dispatch("updateTestData", "short");
+      this.dispatch("updateTestData", "short");  //TODO HARDCODED use testType when other test is available
       state.resultsdata = {};
       state.sex = "male";
       state.age = 20;
       state.name = "";
       state.test_started = false;
       state.answered = new Set();
-      state.testType = "short";
     },
   },
   actions: {
@@ -79,11 +78,9 @@ export default new Vuex.Store({
 
       const test = type === "short" ? "testdata" : "testdata300";
       let mutation = type === "short" ? "UPDATE_TESTDATA" : "UPDATE_TESTDATA300";
-      if (this.state.testdata.length === 0) {
-        axios.get(`${API}/${test}`).then((response) => {
-          commit(mutation, response.data);
-        });
-      }
-    },
+      axios.get(`${API}/${test}`).then((response) => {
+        commit(mutation, response.data);
+      });
+    }
   },
 });

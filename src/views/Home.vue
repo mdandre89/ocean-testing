@@ -93,8 +93,8 @@ export default {
   methods: {
     setType(type) {
       this.$store.commit("UPDATE_TEST_TYPE", type);
+      this.$store.commit("RESET_STATE");
       this.$router.push({ path: "/intro" });
-      this.$store.dispatch("updateTestData", type);
     },
   },
 };
