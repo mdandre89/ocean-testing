@@ -10,7 +10,7 @@
         <v-divider></v-divider>
 
         <v-card-text>
-          {{ new Date().getFullYear() }} — <strong>Big 5 Testing</strong>
+          {{ new Date().getFullYear() }} — <strong>The Big Five Personality Traits</strong>
         </v-card-text>
       </v-card>
     </v-footer>
