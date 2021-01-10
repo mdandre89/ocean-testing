@@ -10,7 +10,7 @@
           transition="scale-transition"
           width="40"
         />
-        {{ $store.state.translation[$store.state.language]["general-website"].title }}
+        {{ $t("general-website").title }}
       </v-btn>
     </div>
 
@@ -19,7 +19,7 @@
     text
     to="/results"
     >
-      {{$store.state.translation[$store.state.language]["general-website"]['retrievereport']}}
+      {{ $t("general-website").retrievereport }}
     </v-btn>
     <LanguageMenu />
     <NavigationMenu />

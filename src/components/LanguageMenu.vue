@@ -42,20 +42,20 @@ export default {
   name: "LanguageMenu",
   data: () => ({
     items: [
-      { text: "english" },
-      { text: "italian" },
-      { text: "spanish" },
-      { text: "french" },
-      { text: "deutsch" },
+      { text: "english", code:"en" },
+      { text: "italian", code:"it" },
+      { text: "spanish", code:"es" },
+      { text: "french", code:"fr" },
+      { text: "deutsch", code:"de" },
     ],
     selectedItem: 0,
   }),
   watch: {
     selectedItem: function (value, oldvalue) {
       if (value !== undefined) {
-        this.$store.commit("CHANGE_LANGUAGE", this.items[value].text);
+        this.$root.$i18n.locale = this.items[value].code
       } else {
-        this.$store.commit("CHANGE_LANGUAGE", this.items[oldvalue].text);
+        this.$root.$i18n.locale = this.items[oldvalue].code
       }
     },
   },

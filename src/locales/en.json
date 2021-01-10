@@ -1,0 +1,53 @@
+{
+	"general-website": {
+		"legend": [
+			"Trait",
+			"Percentile"
+		],
+		"title": "Big Five personality traits",
+		"retrievereport": "See your report",
+		"enteridtext": "Please enter your test id below to check your results (i.e. 5febaa2cc9b7b116872e0cf2)"
+	},
+	"optionText": [
+		"Very Inaccurate",
+		"Moderately Inaccurate",
+		"Neither Accurate or Inaccurate",
+		"Moderately Accurate",
+		"Very Accurate"
+	],
+	"A": "Agreeableness",
+	"C": "Conscientiousness",
+	"E": "Extraversion",
+	"N": "Neuroticism",
+	"O": "Openness to experience",
+	"A1": "Trust",
+	"A2": "Morality",
+	"A3": "Altruism",
+	"A4": "Cooperation",
+	"A5": "Modesty",
+	"A6": "Sympathy",
+	"E1": "Friendliness",
+	"E2": "Gregariousness",
+	"E3": "Assertiveness",
+	"E4": "Activity Level",
+	"E5": "Excitement-seeking",
+	"E6": "Cheerfulness",
+	"C1": "Self-efficacy",
+	"C2": "Orderliness",
+	"C3": "Dutifulness",
+	"C4": "Achievement-striving",
+	"C5": "Self-discipline",
+	"C6": "Cautiousness",
+	"O1": "Imagination",
+	"O2": "Artistic Interests",
+	"O3": "Emotionality",
+	"O4": "Adventurousness",
+	"O5": "Intellect",
+	"O6": "Liberalism",
+	"N1": "Anxiety",
+	"N2": "Anger",
+	"N3": "Depression",
+	"N4": "Self-consciousness",
+	"N5": "Immoderation",
+	"N6": "Vulnerability"
+}

@@ -5,7 +5,7 @@
     <v-container v-for="(facet, index) in $store.state.traits" :key="index + facet">
       <DescriptionCard 
       class="description-card"
-      :info="translation[language]['traitMapping'][facet]" 
+      :info="$t(facet)" 
       :score="$store.state.resultsdata['traits'][facet].score" 
       :HML="$store.state.resultsdata['traits'][facet].HML" 
       :description="description[facet].description" 
@@ -16,7 +16,7 @@
     <div class="text-center">Detailed View</div>
     <v-container v-for="trait in $store.state.traits" :key="trait">
       <v-divider></v-divider>
-      <p class="trait-detailed-view">{{translation[language]["traitMapping"][trait] }}</p>
+      <p class="trait-detailed-view">{{$t(trait)}}</p>
       <Graph :chartData="prepareFacets(trait)" />
       <ul>
         <li v-for="i in [1,2,3,4,5,6]" :key="i">
@@ -46,19 +46,19 @@ export default {
     }
   },
   computed: {
-    ...mapState(['resultsdata', 'translation', 'language', 'description']),
+    ...mapState(['resultsdata', 'language', 'description']),
     prepareTraits() {
       const traitData = [
         [
-          this.translation[this.language]["general-website"]["legend" ][0],
-          this.translation[this.language]["general-website"]["legend"][1],
+          this.$t('general-website').legend[0],
+          this.$t('general-website').legend[1],
           { role: "style" },
           { type: "string", role: "annotation" },
         ],
         ...this.$store.state.traits.map((item)=> {
           let value = parseInt(this.$store.state.resultsdata["traits"][item].score);
           return [
-            this.translation[this.language]["traitMapping"][item],
+            this.$t(item),
             value,
              `color: ${baseColours[item][0]}; opacity: 0.80`,
              value.toString()
@@ -73,15 +73,15 @@ export default {
       let keyFacets = Object.keys(this.$store.state.resultsdata["groupedFacets"][trait])
       const traitData = [
         [
-          this.translation[this.language]["general-website"]["legend"][0],
-          this.translation[this.language]["general-website"]["legend"][1],
+          this.$t('general-website').legend[0],
+          this.$t('general-website').legend[1],
           { role: "style" },
           { type: "string", role: "annotation" },
         ],
         ...keyFacets.map((facet, i) => {
           let value = parseInt(this.$store.state.resultsdata["groupedFacets"][trait][facet].score);
           return [
-            this.translation[this.language]["facetMapping"][facet],
+            this.$t(facet),
             value,
             `color: ${baseColours[trait][i]}; opacity: 0.80`,
              value.toString(),

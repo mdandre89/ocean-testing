@@ -25,7 +25,7 @@ export default {
     },
   methods:{
       renderText(index){
-          return this.$store.state.translation[this.$store.state.language]["optionText"][index]
+        return this.$t("optionText")[index]
       }
   }
 };

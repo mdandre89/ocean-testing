@@ -1,0 +1,53 @@
+{
+    "general-website": {
+        "legend": [
+            "Traite",
+            "Centile"
+        ],
+        "title": "Les cinq grands facteurs de personnalité",
+        "retrievereport": "Voir vos résultats",
+        "enteridtext": "Vous pouvez voir les résultats ici en tapant l'identifiant que vous avez obtenu,  (c'est-à-dire 5febaa2cc9b7b116872e0cf2) dans le champ de saisie ID"
+    },
+    "optionText": [
+        "Fortement en désaccord",
+        "Plutot en désaccord",
+        "Ni en accord ni en désaccord",
+        "Plutot en accord",
+        "Fortement en accord"
+    ],
+    "A": "Agréabilité",
+    "C": "Conscienciosité",
+    "E": "Extraversion",
+    "N": "Névrosisme",
+    "O": "Ouverture à l'expérience",
+    "A1": "Trust",
+    "A2": "Morality",
+    "A3": "Altruism",
+    "A4": "Cooperation",
+    "A5": "Modesty",
+    "A6": "Sympathy",
+    "E1": "Friendliness",
+    "E2": "Gregariousness",
+    "E3": "Assertiveness",
+    "E4": "Activity Level",
+    "E5": "Excitement-seeking",
+    "E6": "Cheerfulness",
+    "C1": "Self-efficacy",
+    "C2": "Orderliness",
+    "C3": "Dutifulness",
+    "C4": "Achievement-striving",
+    "C5": "Self-discipline",
+    "C6": "Cautiousness",
+    "O1": "Imagination",
+    "O2": "Artistic Interests",
+    "O3": "Emotionality",
+    "O4": "Adventurousness",
+    "O5": "Intellect",
+    "O6": "Liberalism",
+    "N1": "Anxiety",
+    "N2": "Anger",
+    "N3": "Depression",
+    "N4": "Self-consciousness",
+    "N5": "Immoderation",
+    "N6": "Vulnerability"
+}

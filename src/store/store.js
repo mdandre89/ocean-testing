@@ -1,5 +1,4 @@
 import description from "@/data/description.json";
-import translation from "@/data/translation.json";
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
@@ -8,11 +7,9 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     traits: ["A", "C", "E", "N", "O"],
-    language: "english",
     testdata: [],
     testdata300: [],
     resultsdata: {},
-    translation,
     description,
     name: "",
     sex: "male",
@@ -36,9 +33,6 @@ export default new Vuex.Store({
     },
     UPDATE_TEST_STARTED(state, value) {
       state.test_started = value;
-    },
-    CHANGE_LANGUAGE(state, value) {
-      state.language = value;
     },
     CREATE_RESULTS(state, value) {
       state.resultsdata = value;

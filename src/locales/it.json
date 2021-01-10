@@ -1,0 +1,53 @@
+{
+	"general-website": {
+		"legend": [
+			"Tratto",
+			"Percentile"
+		],
+		"title": "Le cinque dimensioni della personalità",
+		"retrievereport": "Controlla la tua analisi",
+		"enteridtext": "Immetti qui sotto l'id che hai ottenuto per vedere i risultati (per esempio 5febaa2cc9b7b116872e0cf2)"
+	},
+	"optionText": [
+		"Molto in disaccordo",
+		"In disaccordo",
+		"Nè d'accordo nè disaccordo",
+		"D'accordo",
+		"Molto d'accordo"
+	],
+	"A": "Gradevolezza",
+	"C": "Coscienziosità",
+	"E": "Estroversione",
+	"N": "Nevroticismo",
+	"O": "Apertura mentale",
+	"A1": "Fiducia",
+	"A2": "Moralità",
+	"A3": "Altruismo",
+	"A4": "Cooperazione",
+	"A5": "Modestà",
+	"A6": "Simpatia",
+	"E1": "Cordialità",
+	"E2": "Gregarietà",
+	"E3": "Assertività",
+	"E4": "Livello di attività",
+	"E5": "Ricerca dell'eccitazione",
+	"E6": "Allegria",
+	"C1": "Self-efficacy",
+	"C2": "Ricerca della Precisione",
+	"C3": "Diligenza",
+	"C4": "Dedizione",
+	"C5": "Disciplina",
+	"C6": "Cautela",
+	"O1": "Immaginazione",
+	"O2": "Interessi Artistici",
+	"O3": "Emotionalità",
+	"O4": "Ricerca dell'avventura",
+	"O5": "Intelletto",
+	"O6": "Liberalismo",
+	"N1": "Ansia",
+	"N2": "Rabbia",
+	"N3": "Depressione",
+	"N4": "Autocoscienza",
+	"N5": "Immoderazione",
+	"N6": "Vulnerabilità"
+}

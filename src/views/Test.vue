@@ -6,7 +6,7 @@
     <Options
       v-for="j in Array.from({length: numberOfQuestions}, (item, index) => index)"
       :key="numberOfQuestions * currentPage + j"
-      :text="testData[numberOfQuestions * currentPage + j]['text'][language]"
+      :text="testData[numberOfQuestions * currentPage + j]['text'][$root.$i18n.locale]"
       :index="numberOfQuestions * currentPage + j"
       @change2="listener"
     />
