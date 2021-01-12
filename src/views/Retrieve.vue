@@ -25,6 +25,7 @@ import { validationMixin } from "vuelidate";
 import { required } from "vuelidate/lib/validators";
 
 export default {
+  title: 'Access your personality report - The Big Five Personality Traits',
   mixins: [validationMixin],
   validations: {
     id: { required, ismongoId },

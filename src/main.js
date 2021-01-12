@@ -5,9 +5,11 @@ import store from './store/store'
 import vuetify from './plugins/vuetify';
 import VueAnalytics from 'vue-analytics'
 import i18n from './i18n'
+import titleMixin from './mixins/titleMixin'
 
 Vue.config.productionTip = false
 
+Vue.mixin(titleMixin)
 Vue.use(VueAnalytics, {
   id: 'UA-186274846-1',
   router

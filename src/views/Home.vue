@@ -89,6 +89,7 @@
 
 <script>
 export default {
+  title: 'The Big Five Personality Traits',
   name: "Home",
   methods: {
     setType(type) {

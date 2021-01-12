@@ -109,6 +109,7 @@ import {
 } from "vuelidate/lib/validators";
 
 export default {
+  title: 'Test - The Big Five Personality Traits',
   mixins: [validationMixin],
 
   validations: {

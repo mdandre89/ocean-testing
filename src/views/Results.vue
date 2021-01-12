@@ -35,6 +35,7 @@ import Graph from "@/components/Graph.vue";
 import { mapState } from 'vuex';
 
 export default {
+  title: 'Your Results - The Big Five Personality Traits',
   name: "Results",
   components: {
     Graph,

@@ -1,6 +1,6 @@
 Module for returning Big Five [Johnson 120 IPIP-NEO-PI-R]
 
-# ocean-testing
+# The Big Five Personality Traits
 
 CURRENTLY DEPLOYED AT: http://bigfivepersonalitytraits.com
 

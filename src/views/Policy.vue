@@ -20,5 +20,8 @@
   </div>
 </template>
 
-<style>
-</style>
+<script>
+export default {
+  title: 'Our Privacy Policy - The Big Five Personality Traits',
+}
+</script>

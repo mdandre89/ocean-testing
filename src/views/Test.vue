@@ -30,6 +30,7 @@ import Options from "@/components/Options.vue";
 import { mapState } from 'vuex';
 
 export default {
+  title: 'Test - The Big Five Personality Traits',
   name: "Test",
   components: {
     Options,
