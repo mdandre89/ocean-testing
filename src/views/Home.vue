@@ -1,12 +1,12 @@
 <template>
   <div class="home">
     <v-container class="middlealign">
-      <h1>The Big FIVE PERSONALITY TEST (OCEAN)</h1>
-      <h4>
+      <h1 class="title-app">The Big FIVE PERSONALITY TEST (OCEAN)</h1>
+      <h4 class="subtitle-app">
         Measure your Openness to Experience, Conscientiousness, Extraversion,
         Agreeableness, Neuroticism
       </h4>
-      <p>
+      <p class="text-container">
         The big five personality traits are the best accepted and most commonly
         used model of personality in academic psychology. If you take a college
         course in personality psychology, this is what you will learn about. The
@@ -104,5 +104,8 @@ export default {
 <style>
 .container-main-options {
   margin-top: 30px;
+}
+.container-main-options .v-application ul, .v-application ol{
+  padding-left: 24px;
 }
 </style>

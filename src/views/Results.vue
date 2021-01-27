@@ -1,5 +1,5 @@
 <template>
-  <div class="results" v-if="Object.keys(this.$store.state.resultsdata).length > 0">
+  <div class="middlealign text-container" v-if="Object.keys(this.$store.state.resultsdata).length > 0">
     <p class="text-center id-text">Save this id to retrieve this report in the future: <b>{{$route.params.id}}</b></p>
     <Graph :chartData="prepareTraits" class="trait-chart"/>
     <v-container v-for="(facet, index) in $store.state.traits" :key="index + facet">
@@ -13,7 +13,7 @@
       />
     </v-container>
 
-    <div class="text-center">Detailed View</div>
+    <h2 class="text-center">Detailed View</h2>
     <v-container v-for="trait in $store.state.traits" :key="trait">
       <v-divider></v-divider>
       <p class="trait-detailed-view">{{$t(trait)}}</p>
@@ -102,10 +102,6 @@ export default {
 </script>
 
 <style>
-.trait-detailed-view{
-  margin: 30px 0 20px 0;
-  font-size: 25px;
-}
 .transition-fast-in-fast-out.v-card--reveal.v-card.v-sheet.theme--light{
   min-height: 100%;
   height: auto!important;
@@ -113,12 +109,30 @@ export default {
 .intro-text{
   margin-top: 20px;
 }
+.container{
+  padding: 12px 0px;
+}
+.trait-detailed-view{
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+}
+.v-application ul, .v-application ol{
+  padding-left: 10px;
+}
 .id-text{
   font-size: 18px;
-  margin: 60px 0 0px 0;
+  margin: 10px 0 0px 0;
 }
-.trait-chart{
-  margin-top: 50px;
-  margin-bottom: 30px;
+@media only screen and (min-width: 600px) {
+  .id-text{
+    font-size: 18px;
+    margin: 60px 0 0px 0;
+  }
+  .trait-chart{
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
 }
 </style>

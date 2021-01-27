@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app color="#F5F5F">
+  <v-app-bar app hide-on-scroll color="#F5F5F">
     <div class="d-flex align-center">
       <v-btn text plain rounded large to="/">
         <v-img
@@ -10,12 +10,13 @@
           transition="scale-transition"
           width="40"
         />
-        {{ $t("general-website").title }}
+        <div class="hidden-sm-and-down">{{ $t("general-website").title }}</div>
       </v-btn>
     </div>
 
     <v-spacer></v-spacer>
     <v-btn
+    class="hidden-sm-and-down"
     text
     to="/results"
     >

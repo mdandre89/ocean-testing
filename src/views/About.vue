@@ -1,5 +1,5 @@
 <template>
-  <div class="middlealign">
+  <div class="middlealign text-container">
     <h3>About this test</h3>
     <p>
       The NEO Personality Inventory, authored by Paul T. Costa, Jr. and Robert

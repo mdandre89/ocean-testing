@@ -36,6 +36,7 @@ export default {
   data: () => ({
     items: [
       { text: "Take a new test", link : "/intro" },
+      { text: "Results", link : "/results" },
       { text: "Privacy policy", link : "/policy" },
       { text: "About this test", link : "/about"}
     ],

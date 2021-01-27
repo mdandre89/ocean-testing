@@ -1,6 +1,6 @@
 <template>
   <div class="middlealign enable-select">
-    <h3> {{ $t("general-website").enteridtext }} </h3>
+    <h3 class="subtitle-app"> {{ $t("general-website").enteridtext }} </h3>
     <form>
       <v-text-field
         v-model="id"

@@ -1,5 +1,5 @@
 <template>
-  <div class="middlealign">
+  <div class="middlealign text-container">
     <ul>
       <li>
         <p>
@@ -189,5 +189,8 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
+.v-application ul, .v-application ol{
+  padding-left: 10px;
+}
 </style>

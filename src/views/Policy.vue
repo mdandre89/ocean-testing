@@ -1,5 +1,5 @@
 <template>
-  <div class="middlealign">
+  <div class="middlealign text-container">
     <h3>Privacy Policy</h3>
     <p><i>Part</i> of the information you share on our website is stored and used.</p>
     <p>In particular:</p>

@@ -30,12 +30,12 @@ export default {
   data() {
     return {
       chartOptions: {
-        height: 600,
         width: this.getWidth,
-        chartArea: { width: "100%", height: "90%" },
+        height: window.innerWidth < 650 ? 300 : 600,
+        chartArea: { width: "100%", height: "70%" , top: 20},
         legend: "none",
         vAxis: { minValue: 0, maxValue: 100, gridlines: { count: 4 } },
-        hAxis: { textStyle: { fontSize: 12, fontName: "sans-serif" } },
+        hAxis: { textStyle: { fontName: "sans-serif", fontSize: window.innerWidth < 650 ? 11 : 14 } },
         bar: { groupWidth: "70%" },
         backgroundColor: "#fafafa",
               animation:{
@@ -56,7 +56,7 @@ export default {
   computed:{
     getWidth () {
       const chartWidth = window.innerWidth * 0.70
-      console.log(chartWidth)
+      console.log(window.innerWidth)
       return chartWidth
     }
   }
