@@ -21,8 +21,8 @@
 <script>
 import axios from "axios";
 const ismongoId = (value) => /^[a-f\d]{24}$/i.test(value);
-import { validationMixin } from "vuelidate";
 import { required } from "vuelidate/lib/validators";
+import { validationMixin } from "vuelidate";
 
 export default {
   title: 'Access your personality report - The Big Five Personality Traits',
@@ -49,7 +49,9 @@ export default {
     submit() {
       this.$v.$touch();
       if (!this.$v.$invalid) {
-        const API =  'http://localhost:4000';
+        const API =  process.env.NODE_ENV === "production"
+          ? "https://oceanbackendapi.herokuapp.com"
+          : "http://localhost:4000";
         axios
           .get(`${API}/test/${this.id}` )
           .then((response) => {
