@@ -31,13 +31,10 @@
 import LanguageMenu from "@/components/LanguageMenu";
 import NavigationMenu from "@/components/NavigationMenu"
 export default {
-  data: () => ({
-    themeType: true,
-  }),
   components: {
     LanguageMenu,
     NavigationMenu
-  },
+  }
 };
 </script>
 

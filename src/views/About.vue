@@ -72,9 +72,3 @@
     </p>
   </div>
 </template>
-
-<script>
-export default {
-  title: 'About - The Big Five Personality Traits',
-}
-</script>

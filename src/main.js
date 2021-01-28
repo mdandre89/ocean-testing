@@ -1,19 +1,15 @@
+import '@/assets/css/main.css';
 import App from './App.vue'
-import Vue from 'vue'
+import i18n from './i18n'
 import router from './router'
 import store from './store/store'
-import vuetify from './plugins/vuetify';
-import VueAnalytics from 'vue-analytics'
-import i18n from './i18n'
 import titleMixin from './mixins/titleMixin'
+import Vue from 'vue'
+import vuetify from './plugins/vuetify';
 
 Vue.config.productionTip = false
 
 Vue.mixin(titleMixin)
-Vue.use(VueAnalytics, {
-  id: 'UA-186274846-1',
-  router
-})
 
 new Vue({
   router,

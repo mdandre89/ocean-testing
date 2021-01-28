@@ -100,12 +100,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.container-main-options {
-  margin-top: 30px;
-}
-.container-main-options .v-application ul, .v-application ol{
-  padding-left: 24px;
-}
-</style>

@@ -18,19 +18,17 @@
       <v-divider></v-divider>
       <p class="trait-detailed-view">{{$t(trait)}}</p>
       <Graph :chartData="prepareFacets(trait)" />
-      <ul>
-        <li v-for="i in [1,2,3,4,5,6]" :key="i">
-          <p>{{ description[trait+i] }}</p> 
-          <p>Your level is {{ scoretext($store.state.resultsdata['groupedFacets'][trait][trait+i].HML) }}</p>
-        </li>
-      </ul>
+      <div v-for="i in [1,2,3,4,5,6]" :key="i">
+        <p>{{ description[trait+i] }}</p> 
+        <p>Your level is {{ scoretext($store.state.resultsdata['groupedFacets'][trait][trait+i].HML) }}</p>
+      </div>
     </v-container>
   </div>
 </template>
 
 <script>
-import baseColours from "@/data/graphcolors.json";
 import DescriptionCard from "@/components/DescriptionCard.vue";
+import baseColours from "@/data/graphcolors.json";
 import Graph from "@/components/Graph.vue";
 import { mapState } from 'vuex';
 
@@ -100,39 +98,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.transition-fast-in-fast-out.v-card--reveal.v-card.v-sheet.theme--light{
-  min-height: 100%;
-  height: auto!important;
-}
-.intro-text{
-  margin-top: 20px;
-}
-.container{
-  padding: 12px 0px;
-}
-.trait-detailed-view{
-  color: rgba(0, 0, 0, 0.87);
-  font-size: 1.3rem;
-  font-weight: 600;
-  font-family: "Roboto", sans-serif;
-}
-.v-application ul, .v-application ol{
-  padding-left: 10px;
-}
-.id-text{
-  font-size: 18px;
-  margin: 10px 0 0px 0;
-}
-@media only screen and (min-width: 600px) {
-  .id-text{
-    font-size: 18px;
-    margin: 60px 0 0px 0;
-  }
-  .trait-chart{
-    margin-top: 50px;
-    margin-bottom: 30px;
-  }
-}
-</style>

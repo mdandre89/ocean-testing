@@ -15,14 +15,3 @@
       </v-card>
     </v-footer>
 </template>
-
-<script>
-  export default {
-
-  }
-</script>
-<style>
-.top-card{
-background-color: E1F5F;
-}
-</style>

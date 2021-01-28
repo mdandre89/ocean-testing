@@ -30,23 +30,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.v-progress-linear{
-  margin: 10px 0 0 0;
-}
-.v-input--radio-group__input{
-    justify-content:space-between;
-}
-.question-text{
-  font-size: 22px;
-}
-.v-input--radio-group__input>.v-label{
-  color: black;
-}
-@media only screen and (min-width: 992px) {
-  .v-input--radio-group__input {
-    flex-direction: row!important;
-  }
-}
-</style>

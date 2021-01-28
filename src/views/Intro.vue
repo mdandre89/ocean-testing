@@ -167,7 +167,6 @@ export default {
 
   methods: {
     submit() {
-      this.$ga.event("category", "action", "label", 123);
       this.$v.$touch();
       if (!this.$v.$invalid) {
         if (this.$route.path != "/test") {
@@ -189,8 +188,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.v-application ul, .v-application ol{
-  padding-left: 10px;
-}
-</style>

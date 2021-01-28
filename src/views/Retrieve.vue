@@ -49,7 +49,7 @@ export default {
     submit() {
       this.$v.$touch();
       if (!this.$v.$invalid) {
-        const API = process.env.NODE_ENV === 'production' ? 'https://oceanbackendapi.herokuapp.com' : 'http://localhost:4000';
+        const API =  'http://localhost:4000';
         axios
           .get(`${API}/test/${this.id}` )
           .then((response) => {

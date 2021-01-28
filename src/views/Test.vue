@@ -77,7 +77,7 @@ export default {
         payload["sex"] =  this.sex
         payload["age"] =  this.age
         payload["language"] =  this.language
-        const API = process.env.NODE_ENV === 'production' ? 'https://oceanbackendapi.herokuapp.com' : 'http://localhost:4000';
+        const API = 'http://localhost:4000';
         
         axios.post(`${API}/test`, payload)
           .then(response => {
@@ -106,50 +106,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.navigation {
-  display: flex;
-  justify-content: center;
-}
-.custom-loader {
-  animation: loader 1s infinite;
-  display: flex;
-}
-@-moz-keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@-o-keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.button-test{
-    min-width: 100px!important;
-    margin-right: 20px;
-}
-</style>

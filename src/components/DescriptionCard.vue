@@ -15,6 +15,7 @@
     <v-card-actions>
       <v-btn
         text
+        outlined
         color="teal accent-4"
         @click="reveal = true"
       >
@@ -34,6 +35,7 @@
         <v-card-actions class="pt-0">
           <v-btn
             text
+            outlined
             color="teal accent-4"
             @click="reveal = false"
           >
@@ -78,43 +80,3 @@
     }
   }
 </script>
-
-<style>
-.v-card--reveal {
-  bottom: 0;
-  opacity: 1 !important;
-  position: absolute;
-  width: 100%;
-}
-.description-card-title{
-  color: rgba(0, 0, 0, 0.87);
-  font-size: 1.3rem;
-  font-weight: 600;
-  line-height: 2.5rem;
-  letter-spacing: 0.0073529412em !important;
-  font-family: "Roboto", sans-serif;
-}
-.v-card__text{
-  padding: 0 10px;
-}
-.v-card__actions button{
-  padding: 0px;
-}
-.v-card__actions > .v-btn.v-btn{
-  padding: 0px;
-}
-@media only screen and (min-width: 600px) {
-  .description-card-title{
-    font-size: 2.125rem !important;
-    font-weight: 400;
-    line-height: 2.5rem;
-    letter-spacing: 0.0073529412em !important;
-  }
-  .v-card__text{
-    padding: 16px;
-  }
-  .v-card__actions{
-    padding: 16px;
-  }
-}
-</style>
