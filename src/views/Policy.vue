@@ -19,3 +19,18 @@
     <p>If you have any questions about this privacy policy, please let me know <a href='mailto:freeoceantesting@gmail.com' rel='noopener noreferrer' target='_blank'>here</a>.</p>
   </div>
 </template>
+
+<script>
+export default {
+  metaInfo: {
+    title: 'Private Policy for the Big 5 Personality Traits',
+    titleTemplate: '%s | Free Personality Test',
+    meta: [
+        { property: 'og:url', content: 'https://bigfivepersonalitytraits.com/policy' },
+    ],
+    link: [
+      {rel: 'canonical', href: 'https://bigfivepersonalitytraits.com/policy'}
+    ]
+  }
+};
+</script>

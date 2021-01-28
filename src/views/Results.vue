@@ -1,6 +1,6 @@
 <template>
   <div class="middlealign text-container" v-if="Object.keys(this.$store.state.resultsdata).length > 0">
-    <p class="text-center id-text">Save this id to retrieve this report in the future: <b>{{$route.params.id}}</b></p>
+    <h1 class="text-center id-text">Save this id to retrieve this report in the future: <b>{{$route.params.id}}</b></h1>
     <Graph :chartData="prepareTraits" class="trait-chart"/>
     <v-container v-for="(facet, index) in $store.state.traits" :key="index + facet">
       <DescriptionCard 
@@ -32,9 +32,20 @@ import baseColours from "@/data/graphcolors.json";
 import Graph from "@/components/Graph.vue";
 import { mapState } from 'vuex';
 
+
+
 export default {
-  title: 'Your Results - The Big Five Personality Traits',
   name: "Results",
+    metaInfo: {
+    title: 'Your Results - The Big Five Personality Traits',
+    meta: [
+        { name: 'description', content: 'Analyze yor results across five domains: Openness to Experience, Conscientiousness, Extraversion, Neuroticism and Agreeableness.' },
+        { property: 'og:url', content: 'https://bigfivepersonalitytraits.com/results' },
+    ],
+    link: [
+      {rel: 'canonical', href: 'https://bigfivepersonalitytraits.com/results'}
+    ]
+  },
   components: {
     Graph,
     DescriptionCard

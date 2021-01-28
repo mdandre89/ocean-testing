@@ -3,13 +3,10 @@ import App from './App.vue'
 import i18n from './i18n'
 import router from './router'
 import store from './store/store'
-import titleMixin from './mixins/titleMixin'
 import Vue from 'vue'
 import vuetify from './plugins/vuetify';
 
 Vue.config.productionTip = false
-
-Vue.mixin(titleMixin)
 
 new Vue({
   router,
