@@ -1,6 +1,6 @@
 <template>
   <div class="middlealign text-container">
-    <h3>Privacy Policy</h3>
+    <h1>Privacy Policy</h1>
     <p><i>Part</i> of the information you share on our website is stored and used.</p>
     <p>In particular:</p>
     <ul>
@@ -19,9 +19,3 @@
     <p>If you have any questions about this privacy policy, please let me know <a href='mailto:freeoceantesting@gmail.com' rel='noopener noreferrer' target='_blank'>here</a>.</p>
   </div>
 </template>
-
-<script>
-export default {
-  title: 'Our Privacy Policy - The Big Five Personality Traits',
-}
-</script>

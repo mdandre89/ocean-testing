@@ -1,6 +1,6 @@
 <template>
   <div class="middlealign text-container">
-    <h3>About this test</h3>
+    <h1>About this test</h1>
     <p>
       The NEO Personality Inventory, authored by Paul T. Costa, Jr. and Robert
       R. McCrae, is one of the most widely used commercial inventories for

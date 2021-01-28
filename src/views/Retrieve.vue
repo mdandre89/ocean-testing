@@ -1,6 +1,6 @@
 <template>
   <div class="middlealign enable-select">
-    <h3 class="subtitle-app"> {{ $t("general-website").enteridtext }} </h3>
+    <h1 class="subtitle-app"> {{ $t("general-website").enteridtext }} </h1>
     <form>
       <v-text-field
         v-model="id"
@@ -74,6 +74,3 @@ export default {
   },
 };
 </script>
-
-<style>
-</style>
