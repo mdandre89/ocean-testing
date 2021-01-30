@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <v-container class="middlealign">
-      <h1 class="title-app">The Big FIVE PERSONALITY TEST (OCEAN)</h1>
+      <h1>The Big FIVE PERSONALITY TEST (OCEAN)</h1>
       <h4 class="subtitle-app">
         Measure your Openness to Experience, Conscientiousness, Extraversion,
         Agreeableness, Neuroticism
