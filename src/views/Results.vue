@@ -39,7 +39,7 @@ export default {
     metaInfo: {
     title: 'Your Results - The Big Five Personality Traits',
     meta: [
-        { name: 'description', content: 'Analyze yor results across five domains: Openness to Experience, Conscientiousness, Extraversion, Neuroticism and Agreeableness.' },
+        { vmid: 'description', name: 'description', content: 'Analyze yor results across five domains: Openness to Experience, Conscientiousness, Extraversion, Neuroticism and Agreeableness.' },
         { vmid: 'og:url', property: 'og:url', content: 'https://bigfivepersonalitytraits.com/results' },
     ],
     link: [

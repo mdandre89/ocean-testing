@@ -20,7 +20,7 @@ export default {
       title: 'The Big Five Personality Traits',
       titleTemplate: '%s | Free Personality Test | OCEAN',
       meta: [
-          { name: 'description', content:  'Find out your personality across five domains: Openness to Experience, Conscientiousness, Extraversion, Neuroticism and Agreeableness.'},
+          { vmid: 'description', name: 'description', content:  'Find out your personality across five domains: Openness to Experience, Conscientiousness, Extraversion, Neuroticism and Agreeableness.'},
           { name: 'robots', content: 'index,follow'},
           { property: 'og:title', content: 'Free OCEAN personality test'},
           { property: 'og:description', content: 'Find out your personality across five domains: Openness to Experience, Conscientiousness, Extraversion, Neuroticism and Agreeableness.'},

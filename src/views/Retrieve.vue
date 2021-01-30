@@ -28,7 +28,7 @@ export default {
   metaInfo: {
     title: 'Access your personality report - The Big Five Personality Traits',
     meta: [
-        { name: 'description', content:  'Retrieve your results about the five psychological domains: Openness to Experience, Conscientiousness, Extraversion, Neuroticism and Agreeableness.' },
+        { vmid: 'description', name: 'description', content:  'Retrieve your results about the five psychological domains: Openness to Experience, Conscientiousness, Extraversion, Neuroticism and Agreeableness.' },
         { vmid: 'og:url', property: 'og:url', content: 'https://bigfivepersonalitytraits.com/results' },
     ],
     link: [
