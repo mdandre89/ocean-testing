@@ -43,12 +43,6 @@ export default {
   components: {
     Bottommenu,
     Topmenu
-  },
-
-  data: () => ({
-    icons: ["mdi-home", "mdi-email", "mdi-calendar", "mdi-delete"],
-    padless: false,
-    variant: "fixed",
-  })
+  }
 };
 </script>
