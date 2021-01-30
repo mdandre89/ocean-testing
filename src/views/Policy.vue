@@ -26,10 +26,10 @@ export default {
     title: 'Private Policy for the Big 5 Personality Traits',
     titleTemplate: '%s | Free Personality Test',
     meta: [
-        { property: 'og:url', content: 'https://bigfivepersonalitytraits.com/policy' },
+        { vmid: 'og:url', property: 'og:url', content: 'https://bigfivepersonalitytraits.com/policy' },
     ],
     link: [
-      {rel: 'canonical', href: 'https://bigfivepersonalitytraits.com/policy'}
+      { vmid: 'canonical', rel: 'canonical', href: 'https://bigfivepersonalitytraits.com/policy'}
     ]
   }
 };

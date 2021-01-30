@@ -79,11 +79,11 @@ export default {
     title: 'About page for the Big 5 Personality Traits',
     titleTemplate: '%s | Free Personality Test',
     meta: [
-        { name: 'description', content:  'Find out your personality across five domains: Openness to Experience, Conscientiousness, Extraversion, Neuroticism and Agreeableness.' },
-        { property: 'og:url', content: 'https://bigfivepersonalitytraits.com/about' },
+        { vmid: 'description', name: 'description', content:  'Find out your personality across five domains: Openness to Experience, Conscientiousness, Extraversion, Neuroticism and Agreeableness.' },
+        { vmid: 'og:url', property: 'og:url', content: 'https://bigfivepersonalitytraits.com/about' },
     ],
     link: [
-      {rel: 'canonical', href: 'https://bigfivepersonalitytraits.com/about'}
+      { vmid: 'canonical', rel: 'canonical', href: 'https://bigfivepersonalitytraits.com/about'}
     ]
   }
 };

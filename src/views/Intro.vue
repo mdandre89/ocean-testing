@@ -114,11 +114,11 @@ export default {
     title: 'Test - The Big Five Personality Traits',
     titleTemplate: '%s | Free Personality Test',
     meta: [
-        { name: 'description', content: 'Start the free test to find out your 5 traits: Openness to Experience, Conscientiousness, Extraversion, Neuroticism and Agreeableness.' },
-        { property: 'og:url', content: 'https://bigfivepersonalitytraits.com/intro' },
+        { vmid: 'description', name: 'description', content: 'Start the free test to find out your 5 traits: Openness to Experience, Conscientiousness, Extraversion, Neuroticism and Agreeableness.' },
+        { vmid: 'og:url', property: 'og:url', content: 'https://bigfivepersonalitytraits.com/intro' },
     ],
     link: [
-      {rel: 'canonical', href: 'https://bigfivepersonalitytraits.com/intro'}
+      { vmid: 'canonical', rel: 'canonical', href: 'https://bigfivepersonalitytraits.com/intro'}
     ]
   },
   validations: {
