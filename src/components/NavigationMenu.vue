@@ -11,7 +11,7 @@
               v-bind="attrs"
               v-on="{ ...tooltip, ...menu }"
             >
-            <v-app-bar-nav-icon></v-app-bar-nav-icon>
+            <i aria-hidden="true" class="notranslate menu-icon"></i>
             </v-btn>
           </template>
           <span>Options</span>
