@@ -20,7 +20,7 @@
       <v-card class="mx-auto" max-width="300" tile>
         <v-list dense>
           <v-list-item-group v-model="selectedItem" color="primary">
-            <v-list-item v-for="(item, i) in items" :key="i" @click="redirect(item)">
+            <v-list-item v-for="(item, i) in items" :key="i" :to="item.path">
                 {{item.text.toUpperCase()}}
             </v-list-item>
           </v-list-item-group>
@@ -35,20 +35,12 @@ export default {
   name: "NavigationMenu",
   data: () => ({
     items: [
-      { text: "Take a new test", link : "/intro" },
-      { text: "Results", link : "/results" },
-      { text: "Privacy policy", link : "/policy" },
-      { text: "About this test", link : "/about"}
+      { text: "Take a new test", path : "/intro" },
+      { text: "Results", path : "/results" },
+      { text: "Privacy policy", path : "/policy" },
+      { text: "About this test", path : "/about"}
     ],
-    selectedItem: 0,
+    selectedItem: undefined,
   }),
-  methods:{
-    redirect(item){
-      if(item.link === '/intro'){
-        this.$store.commit("RESET_STATE");
-      }
-      this.$router.push({ path: item.link })
-    }
-  }
 };
 </script>
