@@ -53,63 +53,46 @@
         </p>
       </li>
     </ul>
-    <form>
+    <v-form ref="form" v-model="valid" lazy-validation>
       <v-text-field
         v-model="name"
-        :error-messages="nameErrors"
-        :counter="20"
+        :rules="nameRules"
+        :counter="10"
         label="Nickname"
         required
         outlined
-        @input="$v.name.$touch()"
-        @blur="$v.name.$touch()"
       ></v-text-field>
       <v-select
         v-model="sex"
         :items="items"
-        :error-messages="selectErrors"
+        :rules="sexRules"
         label="Sex"
         outlined
         required
-        @change="$v.sex.$touch()"
-        @blur="$v.sex.$touch()"
       ></v-select>
       <v-text-field
         v-model="age"
-        :error-messages="ageErrors"
+        :rules="ageRules"
         label="age"
         required
         outlined
         type="number"
-        @input="$v.age.$touch()"
-        @blur="$v.age.$touch()"
       ></v-text-field>
       <v-checkbox
         v-model="checkbox"
-        :error-messages="checkboxErrors"
+        :rules="checkboxRules"
         label="I understand the general purpose of this test"
         required
-        @change="$v.checkbox.$touch()"
-        @blur="$v.checkbox.$touch()"
       ></v-checkbox>
 
       <v-btn class="mr-4" @click="submit"> submit </v-btn>
       <v-btn @click="clear"> clear </v-btn>
-    </form>
+    </v-form>
   </div>
 </template>
 
 <script>
-import { validationMixin } from "vuelidate";
-import {
-  between,
-  maxLength,
-  minLength,
-  required,
-} from "vuelidate/lib/validators";
-
 export default {
-  mixins: [validationMixin],
   metaInfo: {
     title: 'Test - The Big Five Personality Traits',
     titleTemplate: '%s | Free Personality Test',
@@ -121,63 +104,32 @@ export default {
       { vmid: 'canonical', rel: 'canonical', href: 'https://bigfivepersonalitytraits.com/intro'}
     ]
   },
-  validations: {
-    name: { required, maxLength: maxLength(20), minLength: minLength(2) },
-    age: { required, between: between(10, 95) },
-    sex: { required },
-    checkbox: {
-      checked(val) {
-        return val;
-      },
-    },
-  },
 
   data: () => ({
+    valid: true,
     age: "",
     sex: null,
     name: "",
     items: ["male", "female"],
     checkbox: false,
+    nameRules: [
+      (v) => !!v || "Name is required",
+      (v) =>
+        (v && v.length <= 10) || "Nickname must be less than 10 characters",
+      (v) => (v && v.length >= 2) || "Name must be at least 2 characters",
+    ],
+    sexRules: [(v) => !!v || "Sex is required"],
+    ageRules: [
+      (v) => !!v || "Age is required",
+      (v) => (v && v < 95) || "Age must be less than 95",
+      (v) => (v && v > 10) || "Age must be more than 10",
+    ],
+    checkboxRules: [(v) => !!v || "You must agree to continue!"],
   }),
-
-  computed: {
-    checkboxErrors() {
-      const errors = [];
-      if (!this.$v.checkbox.$dirty) return errors;
-      !this.$v.checkbox.checked && errors.push("You must agree to continue!");
-      return errors;
-    },
-    selectErrors() {
-      const errors = [];
-      if (!this.$v.sex.$dirty) return errors;
-      !this.$v.sex.required && errors.push("Please select your sex");
-      return errors;
-    },
-    nameErrors() {
-      const errors = [];
-      if (!this.$v.name.$dirty) return errors;
-      !this.$v.name.minLength &&
-        errors.push("Name must be at least 2 characters long");
-      !this.$v.name.maxLength &&
-        errors.push("Name must be at most 20 characters long");
-      !this.$v.name.required && errors.push("Name is required.");
-      return errors;
-    },
-    ageErrors() {
-      const errors = [];
-      if (!this.$v.age.$dirty) return errors;
-      !this.$v.age.between &&
-        errors.push("Age must be between 10 and 95 years");
-      !this.$v.age && errors.push("Must be valid age");
-      !this.$v.age.required && errors.push("Age is required");
-      return errors;
-    },
-  },
 
   methods: {
     submit() {
-      this.$v.$touch();
-      if (!this.$v.$invalid) {
+      if (this.$refs.form.validate()) {
         if (this.$route.path != "/test") {
           this.$store.commit("UPDATE_SEX", this.sex);
           this.$store.commit("UPDATE_NAME", this.name);
@@ -188,11 +140,7 @@ export default {
       }
     },
     clear() {
-      this.$v.$reset();
-      this.name = "";
-      this.age = "";
-      this.sex = null;
-      this.checkbox = false;
+      this.$refs.form.reset();
     },
   },
 };

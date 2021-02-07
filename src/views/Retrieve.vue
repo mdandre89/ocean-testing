@@ -1,28 +1,24 @@
 <template>
   <div class="middlealign enable-select">
     <h1 class="subtitle-app"> {{ $t("general-website").enteridtext }} </h1>
-    <form>
+    <v-form ref="form" v-model="valid" lazy-validation>
       <v-text-field
         v-model="id"
-        :error-messages="idErrors"
+        :rules="idRules"
         :counter="24"
         label="id"
         required
         outlined
-        @input="$v.id.$touch()"
-        @blur="$v.id.$touch()"
       ></v-text-field>
       <v-btn class="mr-4" @click="submit"> submit </v-btn>
       <v-btn @click="clear"> clear </v-btn>
-    </form>
+    </v-form>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 const ismongoId = (value) => /^[a-f\d]{24}$/i.test(value);
-import { required } from "vuelidate/lib/validators";
-import { validationMixin } from "vuelidate";
 
 export default {
   metaInfo: {
@@ -35,29 +31,19 @@ export default {
       { vmid: 'canonical', rel: 'canonical', href: 'https://bigfivepersonalitytraits.com/results'}
     ]
   },
-  mixins: [validationMixin],
-  validations: {
-    id: { required, ismongoId },
-  },
 
   data: () => ({
+    valid:true,
     id: null,
+    idRules: [
+      (v) => !!v || "Name is required",
+      (v) => v && ismongoId(v) || "It must be a valid mongo Id",
+    ],
   }),
-
-  computed: {
-    idErrors() {
-      const errors = [];
-      if (!this.$v.id.$dirty) return errors;
-      !this.$v.id.ismongoId && errors.push("It must be a valid mongo Id");
-      !this.$v.id.required && errors.push("Id is required.");
-      return errors;
-    },
-  },
 
   methods: {
     submit() {
-      this.$v.$touch();
-      if (!this.$v.$invalid) {
+      if (this.$refs.form.validate()) {
         const API =  process.env.NODE_ENV === "production"
           ? "https://oceanbackendapi.herokuapp.com"
           : "http://localhost:4000";
@@ -79,8 +65,7 @@ export default {
       }
     },
     clear() {
-      this.$v.$reset();
-      this.id = null;
+      this.$refs.form.reset();
     },
   },
 };
