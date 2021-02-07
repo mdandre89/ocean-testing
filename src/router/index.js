@@ -26,6 +26,10 @@ const routes = [
   {
     path: '/intro',
     name: 'intro',
+    beforeEnter: (to, from, next) => {
+      store.commit("RESET_STATE")
+      next()
+    },
     component: () => import('../views/Intro.vue')
   },
   {
