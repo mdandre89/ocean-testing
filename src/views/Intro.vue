@@ -53,45 +53,13 @@
         </p>
       </li>
     </ul>
-    <v-form ref="form" v-model="valid" lazy-validation>
-      <v-text-field
-        v-model="name"
-        :rules="nameRules"
-        :counter="10"
-        label="Nickname"
-        required
-        outlined
-      ></v-text-field>
-      <v-select
-        v-model="sex"
-        :items="items"
-        :rules="sexRules"
-        label="Sex"
-        outlined
-        required
-      ></v-select>
-      <v-text-field
-        v-model="age"
-        :rules="ageRules"
-        label="age"
-        required
-        outlined
-        type="number"
-      ></v-text-field>
-      <v-checkbox
-        v-model="checkbox"
-        :rules="checkboxRules"
-        label="I understand the general purpose of this test"
-        required
-      ></v-checkbox>
-
-      <v-btn class="mr-4" @click="submit"> submit </v-btn>
-      <v-btn @click="clear"> clear </v-btn>
-    </v-form>
+    <Form @onSubmit="onSubmit" :fields="['Nickname','Sex', 'Age', 'Checkbox']"/>
   </div>
 </template>
 
 <script>
+import Form from "@/components/Form.vue";
+
 export default {
   metaInfo: {
     title: 'Test - The Big Five Personality Traits',
@@ -104,39 +72,19 @@ export default {
       { vmid: 'canonical', rel: 'canonical', href: 'https://bigfivepersonalitytraits.com/intro'}
     ]
   },
-
-  data: () => ({
-    valid: true,
-    age: "",
-    sex: null,
-    name: "",
-    items: ["male", "female"],
-    checkbox: false,
-    nameRules: [
-      (v) => !!v || "Name is required",
-      (v) =>
-        (v && v.length <= 10) || "Nickname must be less than 10 characters",
-      (v) => (v && v.length >= 2) || "Name must be at least 2 characters",
-    ],
-    sexRules: [(v) => !!v || "Sex is required"],
-    ageRules: [
-      (v) => !!v || "Age is required",
-      (v) => (v && v < 95) || "Age must be less than 95",
-      (v) => (v && v > 10) || "Age must be more than 10",
-    ],
-    checkboxRules: [(v) => !!v || "You must agree to continue!"],
-  }),
+  components:{
+    Form
+  },
 
   methods: {
-    submit() {
-      if (this.$refs.form.validate()) {
-        if (this.$route.path != "/test") {
-          this.$store.commit("UPDATE_SEX", this.sex);
-          this.$store.commit("UPDATE_NAME", this.name);
-          this.$store.commit("UPDATE_AGE", this.age);
-          this.$store.commit("UPDATE_TEST_STARTED", this.checkbox);
-          this.$router.push({ path: `/test` });
-        }
+    onSubmit(payload) {
+      if (this.$route.path != "/test") {
+        let {sex, name, age, checkbox} = payload
+        this.$store.commit("UPDATE_SEX", sex);
+        this.$store.commit("UPDATE_NAME", name);
+        this.$store.commit("UPDATE_AGE", age);
+        this.$store.commit("UPDATE_TEST_STARTED", checkbox);
+        this.$router.push({ path: `/test` });
       }
     },
     clear() {

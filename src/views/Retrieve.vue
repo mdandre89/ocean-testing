@@ -1,24 +1,13 @@
 <template>
   <div class="middlealign enable-select">
     <h1 class="subtitle-app"> {{ $t("general-website").enteridtext }} </h1>
-    <v-form ref="form" v-model="valid" lazy-validation>
-      <v-text-field
-        v-model="id"
-        :rules="idRules"
-        :counter="24"
-        label="id"
-        required
-        outlined
-      ></v-text-field>
-      <v-btn class="mr-4" @click="submit"> submit </v-btn>
-      <v-btn @click="clear"> clear </v-btn>
-    </v-form>
+    <Form @onSubmit="onSubmit" :fields="['Id']"/>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-const ismongoId = (value) => /^[a-f\d]{24}$/i.test(value);
+import Form from "@/components/Form.vue";
 
 export default {
   metaInfo: {
@@ -31,42 +20,30 @@ export default {
       { vmid: 'canonical', rel: 'canonical', href: 'https://bigfivepersonalitytraits.com/results'}
     ]
   },
-
-  data: () => ({
-    valid:true,
-    id: null,
-    idRules: [
-      (v) => !!v || "Name is required",
-      (v) => v && ismongoId(v) || "It must be a valid mongo Id",
-    ],
-  }),
-
+  components:{
+    Form
+  },
   methods: {
-    submit() {
-      if (this.$refs.form.validate()) {
-        const API =  process.env.NODE_ENV === "production"
-          ? "https://oceanbackendapi.herokuapp.com"
-          : "http://localhost:4000";
-        axios
-          .get(`${API}/test/${this.id}` )
-          .then((response) => {
-            this.$store.dispatch("updateResults", response.data.finalResult);
-            setTimeout(() => {
-                this.$router.push({
-                  path: `/results/${response.data.info._id}`,
-                });
-            }, 1000);
-          })
-          .catch((e) => {
-            console.log(e);
-            this.errors.push(e);
-            this.$router.push("/crashpage");
-          });
-      }
-    },
-    clear() {
-      this.$refs.form.reset();
-    },
+    onSubmit(payload) {
+      const API =  process.env.NODE_ENV === "production"
+        ? "https://oceanbackendapi.herokuapp.com"
+        : "http://localhost:4000";
+      axios
+        .get(`${API}/test/${payload.id}` )
+        .then((response) => {
+          this.$store.dispatch("updateResults", response.data.finalResult);
+          setTimeout(() => {
+              this.$router.push({
+                path: `/results/${response.data.info._id}`,
+              });
+          }, 1000);
+        })
+        .catch((e) => {
+          console.log(e);
+          this.errors.push(e);
+          this.$router.push("/crashpage");
+        });
+    }
   },
 };
 </script>
