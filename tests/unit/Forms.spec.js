@@ -57,20 +57,21 @@ describe("Form.vue", () => {
         stubs: ["router-link", "router-view"],
       }
     );
-    const fields = ["Checkbox", "Sex", "Age", "Name"];
+    const fields = ["Checkbox", "Sex", "Age", "Name", "Id"].slice(0, [Math.floor(Math.random()*5)]);
     await wrapper.setProps({ fields });
     const data = {
       sex: "male",
       checkbox: true,
       age: "22",
       name: "a-name",
+      id:"5febaa2cc9b7b116872e0cf2"
     };
 
     const expectedEmittedData = {};
     ["Checkbox", "Sex", "Age", "Name", "Id"].forEach((field) => {
-      expectedEmittedData[field.toLocaleLowerCase()] = data[field.toLocaleLowerCase()]
+      expectedEmittedData[field.toLocaleLowerCase()] = data[field.toLocaleLowerCase()] || !fields.includes(field.toLocaleLowerCase())
         ? data[field.toLocaleLowerCase()]
-        : null;
+        : undefined;
     });
 
     await wrapper.setData(data);
