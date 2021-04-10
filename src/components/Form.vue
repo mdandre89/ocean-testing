@@ -2,6 +2,7 @@
   <v-form ref="form" v-model="valid" lazy-validation>
     <v-text-field
       v-if="checkField('Nickname')"
+      class="form-nickname"
       v-model="name"
       :rules="nameRules"
       :counter="10"
@@ -11,6 +12,7 @@
     ></v-text-field>
     <v-select
       v-if="checkField('Sex')"
+      class="form-sex"
       v-model="sex"
       :items="items"
       :rules="sexRules"
@@ -20,6 +22,7 @@
     ></v-select>
     <v-text-field
       v-if="checkField('Age')"
+      class="form-age"
       v-model="age"
       :rules="ageRules"
       label="age"
@@ -29,6 +32,7 @@
     ></v-text-field>
     <v-text-field
       v-if="checkField('Id')"
+      class="form-id"
       v-model="id"
       :rules="idRules"
       :counter="24"
@@ -38,13 +42,14 @@
     ></v-text-field>
     <v-checkbox
       v-if="checkField('Checkbox')"
+      class="form-checkbox"
       v-model="checkbox"
       :rules="checkboxRules"
       label="I understand the general purpose of this test"
       required
     ></v-checkbox>
-    <v-btn class="mr-4" @click="submit"> submit </v-btn>
-    <v-btn @click="clear"> clear </v-btn>
+    <v-btn class="mr-4 form-submit" @click="submit"> submit </v-btn>
+    <v-btn class="form-clear" @click="clear"> clear </v-btn>
   </v-form>
 </template>
 
@@ -56,6 +61,7 @@ export default {
   props: {
     fields: {
       type: Array,
+      default: ()=>[]
     },
   },
   data: () => ({
