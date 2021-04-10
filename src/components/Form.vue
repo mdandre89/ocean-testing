@@ -1,8 +1,8 @@
 <template>
   <v-form ref="form" v-model="valid" lazy-validation>
     <v-text-field
-      v-if="checkField('Nickname')"
-      class="form-nickname"
+      v-if="checkField('Name')"
+      class="form-name"
       v-model="name"
       :rules="nameRules"
       :counter="10"

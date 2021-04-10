@@ -53,7 +53,7 @@
         </p>
       </li>
     </ul>
-    <Form @onSubmit="onSubmit" :fields="['Nickname','Sex', 'Age', 'Checkbox']"/>
+    <Form @onSubmit="onSubmit" :fields="['Name','Sex', 'Age', 'Checkbox']"/>
   </div>
 </template>
 
