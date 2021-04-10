@@ -1,18 +1,18 @@
 <template>
   <v-app>
-    <Topmenu />
+    <Header />
 
     <v-main>
       <router-view></router-view>
     </v-main>
 
-    <Bottommenu />
+    <Footer />
   </v-app>
 </template>
 
 <script>
-import Bottommenu from "./components/Bottommenu.vue";
-import Topmenu from "./components/Topmenu";
+import Footer from "./components/Footer.vue";
+import Header from "./components/Header";
 
 export default {
   name: "App",
@@ -40,8 +40,8 @@ export default {
       ]
     },
   components: {
-    Bottommenu,
-    Topmenu
+    Footer,
+    Header
   }
 };
 </script>
