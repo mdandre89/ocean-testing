@@ -1,7 +1,7 @@
 <template>
   <v-app-bar app hide-on-scroll color="#F5F5F">
     <div class="d-flex align-center">
-      <v-btn text plain rounded large to="/">
+      <v-btn text plain rounded large to="/" class="website-logo">
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
@@ -16,7 +16,7 @@
 
     <v-spacer></v-spacer>
     <v-btn
-    class="hidden-sm-and-down"
+    class="hidden-sm-and-down results"
     text
     to="/results"
     >
