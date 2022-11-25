@@ -78,7 +78,7 @@ export default {
         payload["age"] =  this.age
         payload["language"] =  this.language
         const API = process.env.NODE_ENV === "production"
-          ? "https://oceanbackendapi.herokuapp.com"
+          ? "https://cyan-outrageous-hummingbird.cyclic.app"
           : "http://localhost:4000";
         
         axios.post(`${API}/test`, payload)
