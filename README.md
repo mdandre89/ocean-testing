@@ -15,7 +15,7 @@ This app is written using [Vuejs](https://vuejs.org) as framework.
 Download and install [vuecli](https://cli.vuejs.org),
 [git](https://git-scm.com/downloads)
 
-The results are saved to a [mongodb](https://www.mongodb.com/) database, I plan to release the backend side soon so you can running locally as well or point it to your db thorugh .env file.
+The results are saved to a [mongodb](https://www.mongodb.com/) database, the backend side is at https://github.com/elephantcastle/oceanbackendsoon, so you can running locally as well or point it to your db thorugh .env file.
 
 ## Development
 
