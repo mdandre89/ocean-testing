@@ -67,7 +67,7 @@ export default new Vuex.Store({
     updateTestData({ commit }, type) {
       const API =
         process.env.NODE_ENV === "production"
-          ? "https://cyan-outrageous-hummingbird.cyclic.app"
+          ? "https://oceanbackend.onrender.com"
           : "http://localhost:4000";
 
       const test = type === "short" ? "testdata" : "testdata300";

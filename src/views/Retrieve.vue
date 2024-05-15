@@ -26,7 +26,7 @@ export default {
   methods: {
     onSubmit(payload) {
       const API =  process.env.NODE_ENV === "production"
-        ? "https://cyan-outrageous-hummingbird.cyclic.app"
+        ? "https://oceanbackend.onrender.com"
         : "http://localhost:4000";
       axios
         .get(`${API}/test/${payload.id}` )
